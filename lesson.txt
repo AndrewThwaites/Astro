@@ -1,0 +1,224 @@
+<LESSON>
+<HEADER>
+	<LESSON_TITLE></LESSON_TITLE>
+	<LESSON_DESCRIPTION></LESSON_DESCRIPTION>
+</HEADER>
+<SLIDES>
+
+	<SLIDE>
+		<TITLE></TITLE>
+		<CONTENT></CONTENT>
+		<MEDIA></MEDIA>
+		<TEST>
+			<QUESTION></QUESTION>
+			<QUESTION_BODY></QUESTION_BODY>
+			<TEST_TYPE>{1 = RADIO,
+						2= COMPLETE_BLANKS,
+						3 = WRITE_ANSWER}</TEST_TYPE>
+			<OPTIONS>
+				<OPTION></OPTION>
+				<OPTION></OPTION>
+				<OPTION></OPTION>
+			</OPTIONS>
+		</TEST>
+		<FOOTER></FOOTER>
+		<ACTION></ACTION>
+	</SLIDE>
+	
+	
+	<SLIDE></SLIDE>
+	
+	<SLIDE></SLIDE>	
+</SLIDES>
+<QUESTIONS>
+	<QUESTION>
+	
+	</QUESTION>
+	<QUESTION>
+	
+	</QUESTION>
+
+</QUESTIONS>
+</LESSON>
+
+
+<COURSE>
+	<TITLE></TITLE>
+	<DESCRIPTION></DESCRIPTION>
+	<LEVEL></LEVEL>
+	<AWARDING_BODY></AWARDING_BODY>
+	<AUTHOR></AUTHOR>
+	<VERSION></VERSION>
+	<LESSON_COUNT></LESSON_COUNT>
+	<MODULES>
+		<MODULE>
+			<TITLE></TITLE>
+			<DESCRIPTION></DESCRIPTION>
+			<LESSONS>
+				<LESSON>
+					<NUMBER>1</NUMBER>
+					<TITLE>Planet Earth</TITLE>
+					<FILENAME>planet_earth.xml</FILENAME>
+					<SECTIONS>
+						<SECTION title="The Earth's structure" id="1.1">
+						<SLIDES>
+							<SLIDE>
+								<TITLE>The Earth's structure</TITLE>
+								<BODY>
+								<p>
+								The Earth, our planet is the largest terrestrial planet in the solar system with a mean diameter of 13000km.  The polar diameter is 42km 
+								smaller than the equitorial diameter, thus the shape of the earth is a <b>oblate spheriod</b>. 
+								</p>
+								<p>
+								MOre than 70% of the Earth's surface is covered by water. &nbsp;The surface accommodates many different environments including forrests, desserts, 
+								frozen polar regions, volcanos to mention a few.
+								</p>
+								</BODY>
+							</SLIDE>
+							
+							<SLIDE>
+								<TITLE>The Earth's structure</TITLE>
+								<BODY>
+								<p>The Earth has four major divisions</p>
+								<IMG>
+								</IMG>
+								</BODY>
+							</SLIDE>
+							
+							<SLIDE>
+								<TITLE>The Earth's structure</TITLE>
+								<BODY>
+								<p>Crust</p>
+								<p>
+								The Earth's solid crust ranges between 0 and 70km.  
+								</p>
+								
+								<p>Mantle</p>
+								The mantle is 
+								<p>
+								</p>
+								
+								<p>Outer Core</p>
+								<p>
+								The outer core is comprised of liquid Iron with some nickel. The temperture is 5000k.
+								</p>
+								
+								<p>Inner core</p>
+								<p>
+								</p>
+								
+								</BODY>
+							</SLIDE>	
+						</SLIDES>
+						<SECTION title="The Earth's atmosphere" id="1.3">
+							<SLIDE>
+							</SLIDE>
+							<SLIDE>
+							</SLIDE>						
+						</SECTION>
+						<QUESTIONS>
+							<QUESTION></QUESTION>
+							<QUESTION></QUESTION>
+							<QUESTION></QUESTION>
+						</QUESTIONS>
+						</SECTION>
+					</SECTIONS>
+				</LESSON>
+				<LESSON>
+					<NUMBER>2</NUMBER>
+					<TITLE>The lunar disc</TITLE>
+					<FILENAME>The_lunar_disc.xml</FILENAME>
+				</LESSON>
+				<LESSON>
+					<NUMBER>3</NUMBER>
+					<TITLE>The earth Moon Sun system</TITLE>
+					<FILENAME>The_earth_Moon_Sun_system.xml</FILENAME>
+				</LESSON>
+				<LESSON>
+					<NUMBER>4</NUMBER>
+					<TITLE>Time and the Earth-Moon-Sun cycles</TITLE>
+					<FILENAME>Time_and_the_Earth_Moon_Sun_cycles.xml</FILENAME>
+				</LESSON>
+				<LESSON>
+					<NUMBER>5</NUMBER>
+					<TITLE>Solar System observation</TITLE>
+					<FILENAME>Solar_System_observation.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>6</NUMBER>
+					<TITLE>Celestial observation</TITLE>
+					<FILENAME>Celestial_observation.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>7</NUMBER>
+					<TITLE>Early models of the Solar System</TITLE>
+					<FILENAME>Early_models_of_the_Solar_System.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>8</NUMBER>
+					<TITLE>Planetary motion and gravity</TITLE>
+					<FILENAME>Planetary_motion_and_gravity.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>9</NUMBER>
+					<TITLE>Exploring the Moon</TITLE>
+					<FILENAME>Exploring_the_Moon.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>10</NUMBER>
+					<TITLE>Solar_astronomy</TITLE>
+					<FILENAME>Solar_astronomy.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>11</NUMBER>
+					<TITLE>Exploring the Solar System</TITLE>
+					<FILENAME>Exploring_the_Solar_System.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>12</NUMBER>
+					<TITLE>Formation of planetary systems</TITLE>
+					<FILENAME>Formation_of_planetary_systems.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>13</NUMBER>
+					<TITLE>Exploring starlight</TITLE>
+					<FILENAME>Exploring starlight.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>14</NUMBER>
+					<TITLE>Stellar evolution</TITLE>
+					<FILENAME>Stellar_evolution.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>15</NUMBER>
+					<TITLE>Our place in the Galaxy</TITLE>
+					<FILENAME>Our_place_in_the_Galaxy.xml</FILENAME>
+				</LESSON>
+				
+				<LESSON>
+					<NUMBER>16</NUMBER>
+					<TITLE>Cosmology</TITLE>
+					<FILENAME>Cosmology.xml</FILENAME>
+				</LESSON>
+				
+			</LESSONS>
+		</MODULE>
+	</MODULES>
+	<GLOSSARY>
+		<TERM>
+		</TERM>
+	</GLOSSARY>
+</COURSE>
+
+
+

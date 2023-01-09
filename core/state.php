@@ -55,7 +55,7 @@ class STATE
 	 */
 	public static function getConfig($key)
 	{
-		UTILS::debug(false, self::$cofiguration);
+		UTILS::debug(false, self::$configuration);
 		
 		return (!empty(self::$configuration[$key])) ? self::$configuration[$key] : false;
 	}

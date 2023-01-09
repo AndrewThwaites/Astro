@@ -129,14 +129,14 @@ class UTILS
 	}
 	
 	
-	public static function make_a_table($table, $fields)
+	public static function makeATable($table, $fields)
 	{
 		echo '<h1>'.$table.'</h1>';
 		
 		global $db;
 		
-		$primmary_key_parts = explode("," , $fields[0]);
-		$primary_key = $primmary_key_parts[0];
+		$primmaryKeyParts = explode("," , $fields[0]);
+		$primary_key = $primmaryKeyParts[0];
 		
 		$sql = 'CREATE TABLE '.$table.' ('.PHP_EOL.
 			   '{%FIELDS%}'.

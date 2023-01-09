@@ -80,6 +80,9 @@ class CRUD
 	 */
 	public function get($table, $field_list, $conditions, $from , $limit)
 	{
+		
+		$params = array();
+		
 		$sql = "SELECT ";
 		if ($field_list == false) 
 		{
@@ -99,8 +102,8 @@ class CRUD
 					case "BETWEEN":
 					$sql.= "BETWEEN ? AND ?";
 					$p = explode("|", $condition`);
-					$params[] = $p[0];
-					$params[] = $p[1];
+					$params = [$p[0], $p[1]];
+					//$params[] = $p[1];
 					break;
 							
 					case "EQUAL":

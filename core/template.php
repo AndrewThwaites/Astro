@@ -2,7 +2,7 @@
 
 class TEMPLATE
 {
-	public function set_page_elements($tenant_id, $page, $lang, $elements)
+	public function setPageElements($tenantId, $page, $lang, $elements)
 	{
 		// Does it exist?
 		$sql = "SELECT * FROM language WHERE tenant_id  ? AND page = ? AND lang =? ";
@@ -24,7 +24,7 @@ class TEMPLATE
 		
 	}
 	
-	public function get_page_elements($tenant_id, $page, $lang)
+	public function getPageEWlements($tenantId, $page, $lang)
 	{
 		// first choice
 		$sql = "SELECT * FROM language WHERE tenant_id = ? AND page = ? AND lang = ?";

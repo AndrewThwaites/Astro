@@ -13,8 +13,8 @@ require_once("core". SLASH. "db_helper.php");
 
 class APP
 {
-	private $db = false;
-	private $command = false;
+	private $db;
+	private $command;
 	private $post = array();
 	
 	 public function __construct($post_data) 

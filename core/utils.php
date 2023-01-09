@@ -5,7 +5,7 @@ class UTILS
 	/*
 	 *
 	 */
-	public static function create_token($length)
+	public static function createToken($length)
 	{
 		$characters = "0123456789ABCDEFGHIJKLMNOQRSTUVWXYZ";
 		$token = "";
@@ -23,13 +23,13 @@ class UTILS
 	/*
 	 *
 	 */
-	public static function is_super_admin($account_id)
+	public static function isSuperAdmin($accountId)
 	{
 		global $db;
 		$admin = false;
 		
 		$sql = "SELECT * FROM person WHERE tenant_id = ? AND id = ?";
-		$params = array(STATE::tenant_id , $account_id);
+		$params = array(STATE::tenant_id , $accountId);
 		$result = $db->query($sql, $params)->fetchone();
 		if ($result) {
 			
@@ -49,29 +49,25 @@ class UTILS
 	{
 		global $db;
 		
-		if ($title)
-		{
-			echo '<h1>'.$title.'</h1>';
-		}
-		
+		echo  ($title) ? '<h1>'.$title.'</h1>' : '';
 		echo '<xmp>';
 		print_r($vars);
 		echo '</xmp>';
 	}
 
 
-	public static function test_plan_action($action_id)
+	public static function testPlanAction($actionId)
 	{
 		global $db;
 		
 		$sql = "SELECT * FROM tp_entry WHERE id = ?";
-		$result = $db->query($sql, array($action_id))->fetchAll();
+		$result = $db->query($sql, array($actionId))->fetchAll();
 		
 		$post_data = ($result) ? '' : json_encode($result['output_data']);
 		return $post_data;
 	}
 
-	public static function add_test_plan_action($feature_id, $tp_label, $test_title, $test_description, $input_data, $output_data, $sequence, $tp_sequence )
+	public static function addTestplanAction($featureId, $tpLabel, $testTitle, $testDescription, $inputData, $outputData, $sequence, $tpSequence )
 	{
 		global $db;
 		
@@ -83,28 +79,28 @@ class UTILS
 	/**
 	 *  modify_primary_key
 	 */
-	private static function make_table($table, $fields)
+	private static function makeTable($table, $fields)
 	{
-		$primmary_key_parts = explode("," , $fields[0]);
-		$primary_key = $primmary_key_parts[0];
+		$primmaryKeyParts = explode("," , $fields[0]);
+		$primaryKey = $primmaryKeyParts[0];
 		
 		$sql = 'CREATE TABLE `tp_feature` ('.PHP_EOL.
 			   '{%FIELDS%}'.
 			   ') ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;';
 		
-		$sql_substr = array();
+		$sqlSubstr = array();
 		foreach($fields as $field)
 		{
-			$field_parts = explode("," , $field);
-			$sql_line_template = "`<%FIELD_NAME%>` <%FIELD_TYPE%> NOT NULL";
+			$fieldParts = explode("," , $field);
+			$sqlLineTemplate = "`<%FIELD_NAME%>` <%FIELD_TYPE%> NOT NULL";
 			
 			if (in_array($fields[1] , array('int', 'tinyint', 'tinytext', 'text' ,'datetime') ))
 			{
 				if ($fields[1] == 'int') $fields[1] = 'int(11)';
-				$sql_line = $sql_line_template;
-				$sql_line = str_replace("<%FIELD_TYPE%>", $fields[1], $sql_line);
-				$sql_line = str_replace("<%FIELD_NAME%>", $fields[0], $sql_line);
-				$sql_substr[] = $sql_line;
+				$sqlLine = $sql_line_template;
+				$sqlLine = str_replace("<%FIELD_TYPE%>", $fields[1], $sql_line);
+				$sqlLine = str_replace("<%FIELD_NAME%>", $fields[0], $sql_line);
+				$sqlSubstr[] = $sql_line;
 			}
 			
 		}
@@ -113,20 +109,20 @@ class UTILS
 		$sql.= '	ALTER TABLE `'.$table.'` '.PHP_EOL.' ADD PRIMARY KEY (`'.$primary_key.'`);'.PHP_EOL.PHP_EOL;		
 		$sql.= 'ALTER TABLE `'.$table.'` '.PHP_EOL.'MODIFY `'.$primary_key.'` int(11) NOT NULL AUTO_INCREMENT;';				
 		
-		return $sql_fragment;
+		return $sql;
 	}  
 
 
 	
-	public static function build_table($table_definitions)
+	public static function buildTable($table_definitions)
 	{
-		if ($table_definitions)
+		if ($tableDefinitions)
 		{
-			foreach($table_definitions as $table_name => $field_definitions)
+			foreach($tableDefinitions as $tableName => $fieldDefinitions)
 			{
 				if ($field_definitions)
 				{
-					self::make_table($table_name , $field_definitions);
+					self::make_table($tableName , $fieldDefinitions);
 				}
 			}
 		}	

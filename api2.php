@@ -46,7 +46,7 @@ class APP
 	/**
 	 *
 	 */
-	private function required_exist($data, $fields )
+	private function requiredExist($data, $fields )
 	{
 		$result = array();
 		foreach($fields as $field)
@@ -63,7 +63,7 @@ class APP
 		die();
 	}
 	
-	private function access_right($access_feature)
+	private function accessRight($access_feature)
 	{
 		return STATE::access_right($access_feature);
 	}

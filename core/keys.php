@@ -26,7 +26,7 @@ class KEYS
 	 *
 	 *	@Param string key_type_name
 	 */
-	private static function add_key_type($key_type_name)
+	private static function addKeyType($keyTypeName)
 	{
 		global $db;
 		$sql = "INSERT INTO key_type (id, status, key_type_name) VALUES (NULL, 1, '$key_type_name')";
@@ -44,7 +44,7 @@ class KEYS
 	 *	@Param	string data_key
 	 *	@Param	string data_value
 	 */
-	private static function add_key_value( $tenant_id, $key_type_id, $resolved_role_id, $data_key, $data_value)
+	private static function addKeyValue( $tenantId, $keyTypeId, $resolvedRoleId, $dataKey, $dataValue)
 	{
 		global $db;
 		$created = date("y-m-d h:i:s");
@@ -52,7 +52,7 @@ class KEYS
 		$data_value = addslashes($data_value);
 		
 		$sql = "INSERT INTO key_entry (id, created, created_by, modified, modified_by, status, tenant_id, key_type_id, resolved_type_id, data_key, data_value ) ".
-			   " VALUES (null, '$created', '1', '$created','1', '1', '$tenant_id', '$key_type_id', '$resolved_role_id', '$data_key', '$data_value' )";
+			   " VALUES (null, '$created', '1', '$created','1', '1', '$tenantId', '$keyTypeId', '$resolvedRoleId', '$dataKey', '$dataValue' )";
 		$db->query($sql);
 	}
 	
@@ -66,12 +66,12 @@ class KEYS
 	 *	@Param	int	resolved_role_type_id
 	 *  @Param	array $data
 	 */
-	public static function bulk_insert($key_name, $key_description, $tenant_id, $role_id, $data)
+	public static function bulkInsert($keyName, $keyDescription, $tenantId, $roleId, $data)
 	{
 		global $db;
 		
 		// Create key type
-		$key_type_id = self::add_key_type($key_name, $key_description);
+		$key_type_id = self::add_key_type($keyName, $keyDescription);
 		
 		// Create key options
 		$data = explode("," , $data);
@@ -91,12 +91,12 @@ class KEYS
 	 *	bulk_key_insert
 	 *
 	 */
-	public static function bulk_key_insert($key_name, $key_description, $tenant_id, $role_id, $data)
+	public static function bulkKeyInsert($keyName, $keyDescription, $tenantId, $roleId, $data)
 	{
 		global $db;
 		
 		// Create key type
-		$key_type_id = self::add_key_type($key_name, $key_description);
+		$keyTypeId = self::addKeyType($keyName, $keyDescription);
 		
 		// Create key options
 		$data = explode("," , $data);
@@ -108,7 +108,7 @@ class KEYS
 			
 			UTILS::debug($cells);
 			
-			self::add_key_value( $tenant_id, $key_type_id, -1, trim($cells[0]), trim($cells[1]));
+			self::add_key_value( $tenantId, $keyTypeId, -1, trim($cells[0]), trim($cells[1]));
 			//$data_key++;
 		}	
 	}
@@ -121,7 +121,7 @@ class KEYS
 	 * @param int role_type_id 
 	 *
 	 */
-	public static function get_key($key_id)
+	public static function getKey($keyId)
 	{
 		global $db;
 		$key = array();

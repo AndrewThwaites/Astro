@@ -27,7 +27,7 @@ class STATE
 	/**
 	 * load_configuration
 	 */
-	public static function load_configuration()
+	public static function loadConfiguration()
 	{
 		global $db;
 		//	id,	tenant_id,	created, created by, status, key, value 
@@ -38,7 +38,7 @@ class STATE
 		}
 	}
 	
-	public static function get_state($state)
+	public static function getState($state)
 	{
 		switch($state)
 		{
@@ -53,7 +53,7 @@ class STATE
 	 *	get_config
 	 *	@param $key
 	 */
-	public static function get_config($key)
+	public static function getConfig($key)
 	{
 		UTILS::debug(false, self::$cofiguration);
 		
@@ -62,13 +62,13 @@ class STATE
 
 	
 	
-	public static function access_right($feature)
+	public static function accessRight($feature)
 	{
 		return (!empty(self::$access_right[$feature])) ? self::$access_right[$feature] : 0;
 	}
 
 	
-	public static function obtain_token($user_name , $token)
+	public static function obtainToken($user_name , $token)
 	{
 		$sql = "SELECT * FROM token WHERE user_name = ? AND token = ?";
 		$row = $db->query($sql ,  $user_name, $token)->fetchArray();
@@ -90,7 +90,7 @@ class STATE
 	 *	@Param $login_id
 	 *
 	 */
-	public static function validate_token( $token, $login_id)
+	public static function validateToken( $token, $login_id)
 	{
 		global $db;
 		

@@ -1,4 +1,5 @@
 <?php
+require_once("core". SLASH. "utils.php");
 
 class STATE
 {
@@ -150,4 +151,3 @@ class STATE
 	}
 }
 STATE::init();
-

@@ -77,9 +77,7 @@ class KEYS
 		$data = explode("," , $data);
 		$data_key = 1;
 		
-		echo '<xmp>';
-		print_r($data);
-		echo '</xmp>';
+		UTILS::debug($data);
 		
 		foreach($data as $indice => $datum)
 		{
@@ -108,9 +106,7 @@ class KEYS
 		{
 			$cells = explode(":", $datum);
 			
-			echo '<xmp>';
-			print_r($cells);
-			echo '</xmp>';
+			UTILS::debug($cells);
 			
 			self::add_key_value( $tenant_id, $key_type_id, -1, trim($cells[0]), trim($cells[1]));
 			//$data_key++;

@@ -15,12 +15,12 @@ echo '<h1>'.__FILE__.'</h1>';
 
 $sql = "SELECT * FROM tp_program WHERE status = ? AND program_code = ?";
 $test_program = $db->query($sql, array(1, "meta_test_01"))->fetchArray();
-print_r($test_program);
+//print_r($test_program);
 
 if($test_program)
 {
 	$test_program_actions = explode(",", $test_program['program_actions']);
-	print_r($test_program_actions);
+	//print_r($test_program_actions);
 	
 	foreach($test_program_actions as $test_program_action)
 	{
@@ -37,7 +37,7 @@ if($test_program)
 		}
 		
 		$postRequest = json_decode($test['input_data']);
-print_r($postRequest);
+		//print_r($postRequest);
 
 		$tp_label =  $test['id'] .' - '. date("Y_m_d_h_i_s");
 		

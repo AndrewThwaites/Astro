@@ -54,9 +54,7 @@ class STATE
 	 */
 	public static function get_config($key)
 	{
-		echo '<xmp>';
-		print_r(self::$cofiguration);
-		echo '</xmp>';
+		UTILS::debug(false, self::$cofiguration);
 		
 		return (!empty(self::$configuration[$key])) ? self::$configuration[$key] : false;
 	}

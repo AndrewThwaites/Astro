@@ -29,7 +29,7 @@ class UTILS
 		$admin = false;
 		
 		$sql = "SELECT * FROM person WHERE tenant_id = ? AND id = ?";
-		$params = array(STATE::tenant_id , $accountId);
+		$params = array(STATE::$tenant_id , $accountId);
 		$result = $db->query($sql, $params)->fetchone();
 		if ($result) {
 			

@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 class CRUD
 {
 	/**
@@ -9,7 +9,7 @@ class CRUD
 	 * @param $table
 	 * @param $fields
 	 */
-	function insert($table, $fields)
+	public function insert($table, $fields)
 	{
 		$params = array();
 		$fields = array();
@@ -33,7 +33,7 @@ class CRUD
 	 *  @param int id
 	 *  @param array conditions
 	 */
-	function update($table_name, $id, $conditions)
+	public function update($table_name, $id, $conditions)
 	{
 		$params = array();
 		$subsql = array();
@@ -54,7 +54,7 @@ class CRUD
 	 * @param string table_name
 	 * @param array conditions
 	 */
-	function delete($table_name, $conditions)
+	public function delete($table_name, $conditions)
 	{
 		$sql = "UPDATE ".$table_name." SET status = ? WHERE ";
 		$params[] = 0;
@@ -78,7 +78,7 @@ class CRUD
 	 * @param array / boolean field_list
 	 * @param array params 
 	 */
-	function get($table, $field_list, $conditions, $from , $limit)
+	public function get($table, $field_list, $conditions, $from , $limit)
 	{
 		$sql = "SELECT ";
 		if ($field_list == false) 
@@ -128,4 +128,4 @@ class CRUD
 		$result = $this->db->query($sql, $params)->result();
 		return $result;
 	}
-}*/
+}

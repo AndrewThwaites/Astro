@@ -31,10 +31,9 @@ class UTILS
 		$sql = "SELECT * FROM person WHERE tenant_id = ? AND id = ?";
 		$params = array(STATE::tenant_id , $account_id);
 		$result = $db->query($sql, $params)->fetchone();
-		if ($result)
-		{
-			if ($result['access_role'] == 1)
-			{
+		if ($result) {
+			
+			if ($result['access_role'] == 1) {
 				$admin = true;
 			}				
 		}

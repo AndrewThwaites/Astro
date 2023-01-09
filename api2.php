@@ -17,7 +17,7 @@ class APP
 	private $command = false;
 	private $post = array();
 	
-	 function __construct($post_data) 
+	 public function __construct($post_data) 
 	 {
 		global $db;
 		
@@ -65,7 +65,7 @@ class APP
 	
 	private function accessRight($access_feature)
 	{
-		return STATE::access_right($access_feature);
+		return STATE::accessRight($access_feature);
 	}
 	
 
@@ -105,7 +105,7 @@ class APP
 		$login_id = $this->get_post('login_id');
 		$token = $this->get_post('token');
 		
-		if (STATE::validate_token( $token, $login_id))
+		if (STATE::validateToken( $token, $login_id))
 		{
 			STATE::load_configuration();
 			

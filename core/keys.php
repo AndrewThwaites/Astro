@@ -71,7 +71,7 @@ class KEYS
 		global $db;
 		
 		// Create key type
-		$key_type_id = self::add_key_type($keyName, $keyDescription);
+		$key_type_id = self::addKeyType($keyName, $keyDescription);
 		
 		// Create key options
 		$data = explode("," , $data);
@@ -81,7 +81,7 @@ class KEYS
 		
 		foreach($data as $indice => $datum)
 		{
-			self::add_key_value( $tenant_id, $key_type_id, -1, $data_key, $datum);
+			self::addKeyValue( $tenant_id, $key_type_id, -1, $data_key, $datum);
 			$data_key++;
 		}
 	}
@@ -106,9 +106,9 @@ class KEYS
 		{
 			$cells = explode(":", $datum);
 			
-			UTILS::debug($cells);
+			UTILS::debug(false, $cells);
 			
-			self::add_key_value( $tenantId, $keyTypeId, -1, trim($cells[0]), trim($cells[1]));
+			self::addKeyValue( $tenantId, $keyTypeId, -1, trim($cells[0]), trim($cells[1]));
 			//$data_key++;
 		}	
 	}

@@ -1,9 +1,11 @@
 todo
 
-1] remove es6 directory + build.png
-2] add data dir and create a glossary
-3] create directories for each chapter of course + create ann array listing the titles of each chapter
+1] remove es6 directory + build.png	- done
+2] add data dir and create a glossary	- done
+3] create directories for each chapter of course + create ann array listing the titles of each chapter	-done
+
 4] create data structure to hold syllabus
 5] create a word document of all content of first chapter
 6] create a comprehensive set of questions relating to chapter 1
+
 7] design system for generating list of questions marking and storing results

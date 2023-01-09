@@ -454,7 +454,8 @@ class APP
 				$result = $db->query($sql, $params)->fetchArray();
 				if (($result) && ($result['count']==1))
 				{
-				
+					
+					$this->dispatch(array("OUTCOME" => 1, "ACTION" => "ACCOUNT_SECURITY_COPY", "COMMENT" => "Access allowed"));
 				}
 			
 				$this->dispatch(array("OUTCOME" => 0, "ACTION" => "ACCOUNT_SECURITY_COPY", "COMMENT" => "Access not allowed"));
@@ -2622,10 +2623,8 @@ EOL;
 			
 			//	invoke method	
 			$result = $this->{'__'.$action}();
-		}
-		else
-		{	
-
+		} else {	
+			echo '... invalid token';
 		}
 		
 	}

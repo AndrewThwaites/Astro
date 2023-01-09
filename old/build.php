@@ -84,8 +84,8 @@ class <MODEL_NAME>
 		global $errorMessage;
 		global $fieldList;
 		
-		$Limit = (!empty(($data['limit'])) ? $data['limit'] : 20;
-		$offset = (!empty(($data['limit'])) ? $data['limit'] : 0;
+		$Limit = (!empty($data['limit'])) ? $data['limit'] : 20;
+		$offset = (!empty($data['limit'])) ? $data['limit'] : 0;
 		$params = array();
 		
 		$sql = "SELECT * FROM <TABLE> WHERE 1 ";
@@ -141,7 +141,7 @@ class <MODEL_NAME>
 	}
 	
 	
-	public static delete($dataVessal, $data)
+	public static function delete($dataVessal, $data)
 	{
 		global $db;
 		global $errorMessage;
@@ -152,7 +152,7 @@ class <MODEL_NAME>
 	}
 	
 	
-	public static update($dataVessal, $data)
+	public static function update($dataVessal, $data)
 	{
 		global $errorMessage;
 		global $fieldList;
@@ -174,7 +174,7 @@ class <MODEL_NAME>
 		
 	}
 	
-	public static create($dataVessal, $data)
+	public static function create($dataVessal, $data)
 	{
 		global $errorMessage;
 		global $fieldList;
@@ -196,7 +196,7 @@ class <MODEL_NAME>
 	}
 	
 	
-	public static edit($dataVessal, $tenant_id, $primary_key)
+	public static function edit($dataVessal, $tenant_id, $primary_key)
 	{
 		global $errorMessage;
 		global $fieldList;

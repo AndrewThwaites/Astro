@@ -72,7 +72,7 @@ class STATE
 	public static function obtain_token($user_name , $token)
 	{
 		$sql = "SELECT * FROM token WHERE user_name = ? AND token = ?";
-		$row = $db-query($sql ,  $user_name, $token)->fetchArray();
+		$row = $db->query($sql ,  $user_name, $token)->fetchArray();
 		if ($row)
 		{
 			self::$token = $token;

@@ -4,33 +4,35 @@ class TEMPLATE
 {
 	public function setPageElements($tenantId, $page, $lang, $elements)
 	{
+		global $db;
+		
 		// Does it exist?
 		$sql = "SELECT * FROM language WHERE tenant_id  ? AND page = ? AND lang =? ";
-		$params = array($tenant_id, $page, $lang);
-		$record = $this->db->query($sql , $params )->result();
+		$params = array($tenantId, $page, $lang);
+		$record = $db->query($sql , $params )->result();
 		if ($record)
 		{
 			$sql = "UPDATE language SET elements = ? WHERE id = ?";
 			$content = json_encode($elements);
 			$params = array($contents , $id);
-			$this->db->query($sql, $params);
-		}
-		else
-		{
+			$db->query($sql, $params);
+		} else {
 			$sql  = "INSERT INTO language ";
 			$params = array($tenant_id, $page, $lang, $elements);
-			$this->db->query($sql, $params);
+			$db->query($sql, $params);
 		}
 		
 	}
 	
 	public function getPageEWlements($tenantId, $page, $lang)
 	{
+		global $db;
+				
 		// first choice
 		$sql = "SELECT * FROM language WHERE tenant_id = ? AND page = ? AND lang = ?";
 		
 		$params = array($tenant_id, $page, $lang);
-		$record = $this->db->query($sql , $params)->result();
+		$record = $db->query($sql , $params)->result();
 		if ($record)
 		{
 			$elements = json_decode($record[0]->elements);
@@ -40,7 +42,7 @@ class TEMPLATE
 		if ($tenant_id != -1)
 		{
 			$params = array(-1, $page, $lang);
-			$record = $this->db->query($sql , $params)->result();
+			$record = $db->query($sql , $params)->result();
 			$elements = json_decode($record[0]->elements);
 			if ($record) return $elements;
 		}
@@ -48,7 +50,7 @@ class TEMPLATE
 		if ($lang != "EN")
 		{
 			$params = array(-1, $page, "EN");
-			$record = $this->db->query($sql , $params)->result();
+			$record = $db->query($sql , $params)->result();
 			$elements = json_decode($record[0]->elements);
 			if ($record) return $elements;
 		}

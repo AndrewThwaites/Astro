@@ -5,7 +5,6 @@ define("__CORE_DIR__" , "/core");
 
 // define tables
 define("TBL_TENANT", "core_tenant");
-
 // confoguration at app level, tenant_level, user level
 define("TBL_CONFIGURATION" , "core_configuration");
 define("TBL_CONFIGURATION_TYPE", "core_configuration_type");

@@ -1,7 +1,7 @@
 <?php
 define ("SLASH", "/");
-include_once("config" .SLASH. "define.php");
-include_once("config".SLASH. "config.php");
+require_once("config/define.php");
+require_once("config/config.php");
 include_once("core".SLASH. "db.php");
 require_once("core". SLASH. "state.php");
 require_once("core". SLASH. "utils.php");

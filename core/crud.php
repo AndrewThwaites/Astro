@@ -87,9 +87,7 @@ class CRUD
 		if ($field_list == false) 
 		{
 			$sql.=" count(*) as 'COUNT' ";
-		}
-		else
-		{
+		} else {
 			$sql.= join(",", $field_list);
 		}
 		
@@ -102,8 +100,8 @@ class CRUD
 					case "BETWEEN":
 					$sql.= "BETWEEN ? AND ?";
 					$p = explode("|", $condition`);
-					$params = [$p[0], $p[1]];
-					//$params[] = $p[1];
+					$params[]= $p[0];
+					$params[] =$p[1];
 					break;
 							
 					case "EQUAL":

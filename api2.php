@@ -107,7 +107,7 @@ class APP
 		
 		if (STATE::validateToken( $token, $login_id))
 		{
-			STATE::load_configuration();
+			STATE::loadConfiguration();
 			
 			if (!method_exists($this, '__'.$action ))
 			{

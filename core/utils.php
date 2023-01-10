@@ -122,7 +122,7 @@ class UTILS
 			{
 				if ($field_definitions)
 				{
-					self::make_table($tableName , $fieldDefinitions);
+					self::makeATable($tableName , $fieldDefinitions);
 				}
 			}
 		}	

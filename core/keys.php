@@ -26,10 +26,10 @@ class KEYS
 	 *
 	 *	@Param string key_type_name
 	 */
-	private static function addKeyType($keyTypeName)
+	private static function addKeyType($keyTypeName, $keyDescription)
 	{
 		global $db;
-		$sql = "INSERT INTO key_type (id, status, key_type_name) VALUES (NULL, 1, '$key_type_name')";
+		$sql = "INSERT INTO key_type (id, status, key_type_name,key_type_description) VALUES (NULL, 1, '$key_type_name','$keyDescription')";
 		$db->query($sql);
 		return $db->lastInsertID();
 	}
@@ -77,7 +77,7 @@ class KEYS
 		$data = explode("," , $data);
 		$data_key = 1;
 		
-		UTILS::debug($data);
+		UTILS::debug(false, $data);
 		
 		foreach($data as $indice => $datum)
 		{

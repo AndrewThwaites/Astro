@@ -11,6 +11,8 @@ class CRUD
 	 */
 	public function insert($table, $fields)
 	{
+		global $db;
+		
 		$params = array();
 		$fields = array();
 		$placeholders = array();
@@ -23,7 +25,7 @@ class CRUD
 		}
 		
 		$sql = "INSERT INTO ".$table." (".join(",",$fields)." ) VALUES (".$placeholders.")";
-		$this->db->query($sql, $params);
+		$db->query($sql, $params);
 	}
 	
 	
@@ -35,6 +37,8 @@ class CRUD
 	 */
 	public function update($table_name, $id, $conditions)
 	{
+		global $db;
+		
 		$params = array();
 		$subsql = array();
 		foreach($conditions as $field => $value)
@@ -45,7 +49,7 @@ class CRUD
 		$sql=  "UPDATE ".$table_name." SET ".join("," , $subsql)." WHERE ";
 		$params[] = $id;
 		
-		$this->db->query($sql, $params);
+		$db->query($sql, $params);
 	}
 	
 	
@@ -56,6 +60,8 @@ class CRUD
 	 */
 	public function delete($table_name, $conditions)
 	{
+		global $db;
+		
 		$sql = "UPDATE ".$table_name." SET status = ? WHERE ";
 		$params[] = 0;
 		
@@ -67,7 +73,7 @@ class CRUD
 		}
 		
 		$sql.=join("," , $subsql);
-		$this->db->query($sql, $params);
+		$db->query($sql, $params);
 	}
 	
 	
@@ -80,6 +86,7 @@ class CRUD
 	 */
 	public function get($table, $field_list, $conditions, $from , $limit)
 	{
+		global $db;
 		
 		$params = array();
 		
@@ -126,7 +133,7 @@ class CRUD
 			$params[] = $limit;
 		}
 		
-		$result = $this->db->query($sql, $params)->result();
+		$result = $db->query($sql, $params)->result();
 		return $result;
 	}
 }

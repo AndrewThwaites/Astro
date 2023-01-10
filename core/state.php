@@ -1,5 +1,7 @@
 <?php
-require_once("core". SLASH. "utils.php");
+include_once("config/define.php");
+include_once("config/onfig.php");
+require_once("core/utils.php");
 
 class STATE
 {

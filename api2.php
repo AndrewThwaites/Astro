@@ -73,7 +73,7 @@ class APP
 	{
 		echo 'VERSION 1.0';
 		
-		if (!$this->required_exist($this->post, array("test_string") ))
+		if (!$this->requiredExist($this->post, array("test_string") ))
 		{
 			$this->dispatch(array("OUTCOME"=> 1,  
 								  "ACTION" => str_replace("__", "", __FUNCTION__),
@@ -102,8 +102,8 @@ class APP
 			$this->dispatch($result);
 		}
 		
-		$login_id = $this->get_post('login_id');
-		$token = $this->get_post('token');
+		$login_id = $this->getPost('login_id');
+		$token = $this->getPost('token');
 		
 		if (STATE::validateToken( $token, $login_id))
 		{

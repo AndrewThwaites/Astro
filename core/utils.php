@@ -97,14 +97,14 @@ class UTILS
 			if (in_array($fields[1] , array('int', 'tinyint', 'tinytext', 'text' ,'datetime') ))
 			{
 				if ($fields[1] == 'int') $fields[1] = 'int(11)';
-				$sqlLine = $sql_line_template;
-				$sqlLine = str_replace("<%FIELD_TYPE%>", $fields[1], $sql_line);
-				$sqlLine = str_replace("<%FIELD_NAME%>", $fields[0], $sql_line);
-				$sqlSubstr[] = $sql_line;
+				$sqlLine = $sqlLineTemplate;
+				$sqlLine = str_replace("<%FIELD_TYPE%>", $fields[1], $sqlLine);
+				$sqlLine = str_replace("<%FIELD_NAME%>", $fields[0], $sqlLine);
+				$sqlSubstr[] = $sqlLine;
 			}
 			
 		}
-		$sql = str_replace( "{%FIELDS%}", join("," , $sql_substr), $sql );
+		$sql = str_replace( "{%FIELDS%}", join("," , $sqlSubstr), $sql );
 		
 		$sql.= '	ALTER TABLE `'.$table.'` '.PHP_EOL.' ADD PRIMARY KEY (`'.$primary_key.'`);'.PHP_EOL.PHP_EOL;		
 		$sql.= 'ALTER TABLE `'.$table.'` '.PHP_EOL.'MODIFY `'.$primary_key.'` int(11) NOT NULL AUTO_INCREMENT;';				

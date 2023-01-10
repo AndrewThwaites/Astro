@@ -72,7 +72,7 @@ class UTILS
 		global $db;
 		
 		$sql = "INSERT INTO tp_feature_test (id, feature_id, tp_label,execution_time, created, input_data, output_data) VALUES (?,?,?,?,?,?,?)";
-		$param = array(NULL, $feature_id, $test_title, $test_description, "0000-00-00 00:00:00", $input_data, $output_data, $sequence, $tp_sequence ,0, 0);
+		$param = array(NULL, $featureId, $testTitle, $testDescription, "0000-00-00 00:00:00", $inputData, $outputData, $sequence, $tpSequence ,0, 0);
 		$result = $db->query($sql, $param);
 	}
 	

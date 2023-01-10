@@ -12,7 +12,7 @@ class STATE
 	public static $configuration = array();
 	public static $state;
 	
-	public function init() 
+	public static function init() 
 	{
         self::$tenant_id = -1;
 		self::$login_id = -1;

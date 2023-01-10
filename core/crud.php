@@ -84,7 +84,7 @@ class CRUD
 	 * @param array / boolean field_list
 	 * @param array params 
 	 */
-	public function get($table, $field_list, $conditions, $from , $limit)
+	public function get($table, $field_list, $conditions, $offset , $limit)
 	{
 		global $db;
 		
